@@ -12,7 +12,7 @@ class IsBooker(BasePermission):
             return False
 
 class MoreThanThreeDays(BasePermission):
-    message='Try again after 3 days'
+    message='To late'
     def has_object_permission(self, request, view, obj):
         if (obj.date - date.today()).days >3:
             return True
